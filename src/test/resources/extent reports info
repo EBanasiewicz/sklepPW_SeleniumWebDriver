@@ -1,0 +1,20 @@
+to jest przykład implementacji Extent Reports.
+
+W Base Test zostały dodane:
+
+@BeforeSuite
+public void beforeSuite(){
+ sparkReporter = new ExtentSparkReporter("index.html");
+ extentReports = new ExtentReports();
+ extentReports.attachReporter(sparkReporter);
+}
+
+oraz
+
+@AfterSuite
+public void afterSuite()
+{
+    extentReports.flush();
+}
+
+Ze względu na podejście fluent, logowanie po danych krokach zaimplementowano w funkcjach wewnątrz Page Objectów

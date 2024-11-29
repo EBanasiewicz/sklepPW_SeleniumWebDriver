@@ -1,0 +1,18 @@
+<!--
+parallel - poziom równoległości. Możliwe opcje:
+tests: równoległe wykonywanie grup testów z tego pliku
+classes: równoległe uruchamianie klas.
+methods: równoległe uruchamianie metod testowych.
+thread-count="4":  liczba wątków (równolegle działające instancje WebDrivera)-->
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ParallelSuite" >
+    <test name="ParallelTestExecution">
+        <classes>
+            <class name="pl.sklepPw.tests.CartTest"/>
+            <class name="pl.sklepPw.tests.CheckoutTest"/>
+            <class name="pl.sklepPw.tests.LoginTest"/>
+            <class name="pl.sklepPw.tests.SearchTest"/>
+        </classes>
+    </test>
+</suite>
